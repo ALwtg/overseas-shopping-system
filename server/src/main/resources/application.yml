@@ -1,0 +1,40 @@
+server:
+  port: 9090
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/daigou?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+    username: root
+    password: ""  # XAMPP 默认 root 无密码
+  # Redis 配置（可选，如未安装可注释掉）
+  # redis:
+  #   host: localhost
+  #   port: 6379
+  #   database: 0
+  #   timeout: 3000ms
+  #   lettuce:
+  #     pool:
+  #       max-active: 20
+  #       max-idle: 10
+  #       min-idle: 5
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: com.daigou.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+jwt:
+  secret: daigou-system-jwt-secret-key-for-overseas-purchase-platform-2024
+  expiration: 604800000
+
+file:
+  upload-path: D:/daigou-uploads/
