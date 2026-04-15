@@ -259,13 +259,13 @@ CREATE TABLE `announcement` (
 
 -- 管理员账号 (密码: admin123)
 INSERT INTO `user` (`username`, `password`, `nickname`, `role`, `status`) VALUES
-('admin', '$2a$10$N.ZGUlwCxaK8F/0sN.jiX.AAoG.c/RiDblzGKgJKYX/4YzVv.KRjW', '系统管理员', 2, 1);
+('admin', 'admin123', '系统管理员', 2, 1);
 
 -- 测试用户 (密码: user123)
 INSERT INTO `user` (`username`, `password`, `nickname`, `phone`, `avatar`, `role`, `status`) VALUES
-('xiaoming', '$2a$10$8GJ.0kZOY/i5U8VCxdkB5O/kz0XudLzC5P51x/z3cGp0F3Qx5PcaC', '小明同学', '13800138001', 'https://placehold.co/120x120/1976D2/fff?text=XM', 0, 1),
-('lily', '$2a$10$8GJ.0kZOY/i5U8VCxdkB5O/kz0XudLzC5P51x/z3cGp0F3Qx5PcaC', 'Lily', '13900139002', 'https://placehold.co/120x120/E91E63/fff?text=LL', 0, 1),
-('zhangsan', '$2a$10$8GJ.0kZOY/i5U8VCxdkB5O/kz0XudLzC5P51x/z3cGp0F3Qx5PcaC', '张三', '13700137003', 'https://placehold.co/120x120/FF9800/fff?text=ZS', 1, 1);
+('xiaoming', 'user123', '小明同学', '13800138001', 'https://placehold.co/120x120/1976D2/fff?text=XM', 0, 1),
+('lily', 'user123', 'Lily', '13900139002', 'https://placehold.co/120x120/E91E63/fff?text=LL', 0, 1),
+('zhangsan', 'user123', '张三', '13700137003', 'https://placehold.co/120x120/FF9800/fff?text=ZS', 1, 1);
 
 -- 商家数据
 INSERT INTO `merchant` (`user_id`, `store_name`, `license_no`, `contact_phone`, `store_desc`, `location`, `status`, `rating`, `balance`) VALUES
