@@ -21,7 +21,7 @@
             <!-- 商品图片 -->
             <div class="aspect-square rounded-lg overflow-hidden bg-gray-100">
               <img 
-                :src="product.image || '/default-product.jpg'" 
+                :src="product.image || '/product.png'" 
                 :alt="product.name"
                 class="w-full h-full object-cover"
               >

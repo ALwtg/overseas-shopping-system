@@ -42,5 +42,9 @@ export const useUserStore = defineStore('user', () => {
     removeToken()
   }
 
-  return { token, userInfo, isLoggedIn, isMerchant, isAdmin, login, register, fetchUserInfo, logout }
+  function setUserInfo(info) {
+    userInfo.value = info
+  }
+
+  return { token, userInfo, isLoggedIn, isMerchant, isAdmin, login, register, fetchUserInfo, logout, setUserInfo }
 })

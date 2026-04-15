@@ -73,7 +73,7 @@
       </div>
       <div v-else class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
         <ProductCard v-for="i in 10" :key="i"
-                     :product="{ id: i, name: '热门代购商品', price: (Math.random() * 2000 + 100).toFixed(2), sales: Math.floor(Math.random() * 500), isHot: 1, sourceCountry: ['美国','日本','韩国'][i % 3], coverImage: `https://images.unsplash.com/photo-${1511499767150 + a48d23aafdcf}?w=400&h=400&fit=crop` }" />
+                     :product="{ id: i, name: '热门代购商品', price: (Math.random() * 2000 + 100).toFixed(2), sales: Math.floor(Math.random() * 500), isHot: 1, sourceCountry: ['美国','日本','韩国'][i % 3], coverImage: '/product.png' }" />
       </div>
     </section>
 

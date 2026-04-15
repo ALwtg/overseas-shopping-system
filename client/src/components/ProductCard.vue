@@ -2,7 +2,7 @@
   <div class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-primary/30 cursor-pointer" @click="$router.push(`/product/${product.id}`)">
     <!-- 商品图片 -->
     <div class="relative aspect-square overflow-hidden bg-gray-50">
-      <img :src="product.coverImage || 'https://placehold.co/400x400/f0f0f0/999?text=No+Image'"
+      <img :src="product.coverImage || '/product.png'"
            :alt="product.name"
            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
            loading="lazy" />

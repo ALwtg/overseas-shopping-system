@@ -68,13 +68,16 @@ const rules = {
 }
 
 async function handleRegister() {
-  await formRef.value.validate()
-  loading.value = true
   try {
+    await formRef.value.validate()
+    loading.value = true
     await userStore.register(form)
     ElMessage.success('注册成功！请登录')
     router.push('/login')
-  } catch (e) {}
-  loading.value = false
+  } catch (e) {
+    ElMessage.error(e.message || '注册失败，请重试')
+  } finally {
+    loading.value = false
+  }
 }
 </script>

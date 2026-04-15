@@ -9,4 +9,5 @@ public interface UserService extends IService<User> {
     User getUserInfo(Long id);
     void updateUserInfo(User user);
     Long getUserIdFromToken(String token);
+    void changePassword(Long userId, String oldPassword, String newPassword);
 }

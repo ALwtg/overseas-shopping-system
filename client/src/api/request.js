@@ -2,6 +2,10 @@ import axios from 'axios'
 import { useUserStore } from '@/store/useUserStore'
 import { ElMessage } from 'element-plus'
 
+console.log('[API] Request module version: 1.0.2')
+console.log('[API] Base URL:', '/api')
+console.log('[API] Current host:', window.location.host)
+
 const request = axios.create({
   baseURL: '/api',
   timeout: 15000,
@@ -17,9 +21,9 @@ request.interceptors.request.use(config => {
 
 request.interceptors.response.use(response => {
   const res = response.data
-  if (res.code !== 200) {
+  if (Number(res.code) !== 200) {
     ElMessage.error(res.msg || '请求失败')
-    if (res.code === 401) {
+    if (Number(res.code) === 401) {
       const userStore = useUserStore()
       userStore.logout()
       window.location.href = '/login'

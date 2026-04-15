@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-gray-50">
     <AppHeader />
     
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto px-4 pt-28 pb-8">
       <div class="grid md:grid-cols-4 gap-6">
         <!-- 侧边导航 -->
         <div class="md:col-span-1">
@@ -310,11 +310,14 @@ const initData = async () => {
 const saveProfile = async () => {
   saving.value = true
   try {
-    await updateUserInfo(userForm.value)
+    console.log('[saveProfile] Calling updateUserInfo...')
+    const res = await updateUserInfo(userForm.value)
+    console.log('[saveProfile] Response:', res)
     userInfo.value = { ...userForm.value }
     userStore.setUserInfo(userInfo.value)
     ElMessage.success('保存成功')
   } catch (error) {
+    console.error('[saveProfile] Error:', error)
     ElMessage.error('保存失败')
   } finally {
     saving.value = false

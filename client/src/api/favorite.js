@@ -11,3 +11,7 @@ export function checkFavorite(productId) {
 export function getFavoriteList() {
   return request({ url: '/favorite/list', method: 'get' })
 }
+
+export function removeFavorite(productId) {
+  return request({ url: `/favorite/remove/${productId}`, method: 'delete' })
+}

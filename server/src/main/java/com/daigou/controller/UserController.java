@@ -63,4 +63,12 @@ public class UserController {
         addressMapper.deleteById(id);
         return Result.ok("删除成功");
     }
+
+    @PutMapping("/password")
+    public Result<?> changePassword(@RequestAttribute Long userId, @RequestBody Map<String, String> params) {
+        String oldPassword = params.get("oldPassword");
+        String newPassword = params.get("newPassword");
+        userService.changePassword(userId, oldPassword, newPassword);
+        return Result.ok("密码修改成功");
+    }
 }
