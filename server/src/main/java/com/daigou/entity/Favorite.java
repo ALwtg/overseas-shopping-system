@@ -16,5 +16,6 @@ public class Favorite {
     private LocalDateTime createTime;
 
     // 非字段
+    @com.baomidou.mybatisplus.annotation.TableField(exist = false)
     private Product product;
 }

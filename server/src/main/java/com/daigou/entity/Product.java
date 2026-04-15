@@ -33,7 +33,9 @@ public class Product {
     private LocalDateTime createTime;
     private LocalDateTime updateTime;
 
-    // 非字段
+    // 非字段 - 关联查询使用
+    @com.baomidou.mybatisplus.annotation.TableField(exist = false)
     private String categoryName;
+    @com.baomidou.mybatisplus.annotation.TableField(exist = false)
     private String merchantName;
 }

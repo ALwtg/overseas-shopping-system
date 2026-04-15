@@ -31,5 +31,6 @@ public class OrderInfo {
     private LocalDateTime updateTime;
 
     // 非字段
+    @com.baomidou.mybatisplus.annotation.TableField(exist = false)
     private String statusText;
 }

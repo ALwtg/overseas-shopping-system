@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/daigou?useUnicode=true&characterEncoding=utf8&connectionCollation=utf8mb4_general_ci&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://localhost:3306/daigou?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: ""  # XAMPP 默认 root 无密码
   # Redis 配置（可选，如未安装可注释掉）
@@ -37,4 +37,4 @@ jwt:
   expiration: 604800000
 
 file:
-  upload-path: D:/daigou-uploads/
+  upload-path: E:/vscode_workspace/基于 SpringBoot+Vue 的海外物品代购系统的设计与实现/images

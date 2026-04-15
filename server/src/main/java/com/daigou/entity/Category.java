@@ -20,5 +20,6 @@ public class Category {
     private LocalDateTime updateTime;
 
     // 非字段：子分类列表
+    @com.baomidou.mybatisplus.annotation.TableField(exist = false)
     private java.util.List<Category> children;
 }

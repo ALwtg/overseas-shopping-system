@@ -19,7 +19,8 @@ public class JwtInterceptor implements HandlerInterceptor {
         String uri = request.getRequestURI();
         // 公开接口不需要token
         if (uri.startsWith("/auth/") || uri.startsWith("/product/") || uri.startsWith("/category/")
-                || uri.startsWith("/announcement/list") || uri.startsWith("/review/product/")) {
+                || uri.startsWith("/announcement/list") || uri.startsWith("/review/product/")
+                || uri.startsWith("/api/images/") || uri.startsWith("/uploads/")) {
             return true;
         }
 
