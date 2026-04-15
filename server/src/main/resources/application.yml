@@ -38,3 +38,12 @@ jwt:
 
 file:
   upload-path: E:/vscode_workspace/基于 SpringBoot+Vue 的海外物品代购系统的设计与实现/images
+
+# 日志配置
+logging:
+  level:
+    root: INFO
+    com.daigou.config: DEBUG
+    com.daigou: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"

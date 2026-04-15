@@ -14,6 +14,12 @@ export default defineConfig({
     host: '0.0.0.0',
     allowedHosts: true,
     proxy: {
+      // 图片请求直接代理，不重写路径
+      '/api/images': {
+        target: 'http://localhost:9090',
+        changeOrigin: true
+      },
+      // API 请求需要去掉 /api 前缀
       '/api': {
         target: 'http://localhost:9090',
         changeOrigin: true,
