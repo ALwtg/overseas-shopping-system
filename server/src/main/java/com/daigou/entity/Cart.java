@@ -18,5 +18,6 @@ public class Cart {
     private LocalDateTime createTime;
     private LocalDateTime updateTime;
 
+    @com.baomidou.mybatisplus.annotation.TableField(exist = false)
     private Product product; // 关联商品
 }

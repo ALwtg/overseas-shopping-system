@@ -5,6 +5,7 @@ import { getCartList, addToCart, updateCartQty, removeCartItem } from '@/api/car
 export const useCartStore = defineStore('cart', () => {
   const cartItems = ref([])
   const loading = ref(false)
+  const cartCount = ref(0)
 
   const totalItems = computed(() => cartItems.value.reduce((sum, item) => sum + item.quantity, 0))
   const totalPrice = computed(() =>
@@ -18,8 +19,17 @@ export const useCartStore = defineStore('cart', () => {
     try {
       const res = await getCartList()
       cartItems.value = res.data || []
+      cartCount.value = totalItems.value
     } catch (e) {}
     loading.value = false
+  }
+
+  async function fetchCartCount() {
+    try {
+      const res = await getCartList()
+      const items = res.data || []
+      cartCount.value = items.reduce((sum, item) => sum + item.quantity, 0)
+    } catch (e) {}
   }
 
   async function addProduct(productId, quantity) {
@@ -37,5 +47,5 @@ export const useCartStore = defineStore('cart', () => {
     await fetchCart()
   }
 
-  return { cartItems, loading, totalItems, totalPrice, fetchCart, addProduct, updateQuantity, removeItem }
+  return { cartItems, loading, totalItems, totalPrice, cartCount, fetchCart, fetchCartCount, addProduct, updateQuantity, removeItem }
 })

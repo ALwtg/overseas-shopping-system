@@ -21,7 +21,7 @@
             <!-- 商品图片 -->
             <div class="aspect-square rounded-lg overflow-hidden bg-gray-100">
               <img 
-                :src="product.image || '/product.png'" 
+                :src="product.coverImage || '/product.png'" 
                 :alt="product.name"
                 class="w-full h-full object-cover"
               >
@@ -217,7 +217,12 @@ const addToCart = async () => {
     cartStore.fetchCartCount()
     ElMessage.success('已加入购物车')
   } catch (error) {
-    ElMessage.error('添加失败')
+    console.error('[加入购物车失败]', error)
+    if (error.message && error.message.includes('异常类型:')) {
+      // 显示服务器返回的详细错误
+      console.error('[服务器详细错误]', error.message)
+    }
+    ElMessage.error('添加失败，请查看控制台')
   }
 }
 

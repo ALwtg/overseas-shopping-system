@@ -4,6 +4,10 @@ export function toggleFavorite(productId) {
   return request({ url: `/favorite/toggle/${productId}`, method: 'post' })
 }
 
+export function addFavorite(data) {
+  return request({ url: '/favorite/add', method: 'post', data })
+}
+
 export function checkFavorite(productId) {
   return request({ url: `/favorite/check/${productId}`, method: 'get' })
 }

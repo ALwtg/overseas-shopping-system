@@ -21,7 +21,7 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements Ca
     @Override
     public void addCart(Long userId, Long productId, Integer quantity) {
         Product product = productMapper.selectById(productId);
-        if (product == null || product.getStatus() != 1 || product.getDeleted() != 0)
+        if (product == null || product.getStatus() != 1 || (product.getDeleted() != null && product.getDeleted() != 0))
             throw new BusinessException("商品不存在或已下架");
 
         Cart exist = getOne(new LambdaQueryWrapper<Cart>()
